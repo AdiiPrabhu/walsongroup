@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Walson Group — Coming Soon</title>
+  <meta name="description" content="Walson Group is growing something fresh. Wholesome, healthy food — coming soon." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Walson Group — Coming Soon" />
+  <meta property="og:description" content="Wholesome, healthy food. Something fresh is growing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://walsongroup.in" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <header class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 21c0-6 3-11 9-13-1 7-4 11-9 13Z" />
+          <path d="M12 21c0-5-2.5-9-7-10.5C5.5 16 8 20 12 21Z" />
+        </svg>
+      </span>
+      <span class="brand-name">Walson&nbsp;Group</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">Est. in good soil &middot; walsongroup.in</p>
+      <h1 class="headline">
+        Something fresh<br />
+        is <em>growing.</em>
+      </h1>
+      <p class="lede">
+        Wholesome, honestly-grown food for the way you want to eat.
+        We're putting the finishing touches on something good for you —
+        and good for the planet.
+      </p>
+
+      <div class="status" role="status">
+        <span class="dot" aria-hidden="true"></span>
+        Coming Soon
+      </div>
+
+      <form class="notify" id="notify" novalidate>
+        <label class="sr-only" for="email">Email address</label>
+        <input id="email" name="email" type="email" inputmode="email" autocomplete="email"
+               placeholder="you@email.com" required />
+        <button type="submit">Notify me</button>
+      </form>
+      <p class="notify-note" id="notify-note">Be the first to know when we launch. No spam, ever.</p>
+    </section>
+
+    <footer class="foot">
+      <span>&copy; <span id="year"></span> Walson Group</span>
+      <a href="mailto:hello@walsongroup.in">hello@walsongroup.in</a>
+    </footer>
+  </main>
+
+  <script src="stars.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const form = document.getElementById('notify');
+    const note = document.getElementById('notify-note');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email');
+      if (!email.value || !email.checkValidity()) {
+        note.textContent = 'Please enter a valid email address.';
+        note.classList.add('is-error');
+        email.focus();
+        return;
+      }
+      note.textContent = "Thanks! We'll be in touch at " + email.value + ".";
+      note.classList.remove('is-error');
+      form.reset();
+    });
+  </script>
+</body>
+</html>

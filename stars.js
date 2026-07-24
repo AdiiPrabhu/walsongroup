@@ -5,8 +5,8 @@
   const ctx = canvas.getContext("2d");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Fresh, healthy palette — limes, greens, cream, a little gold
-  const COLORS = ["#c6ee8f", "#a8e6a1", "#8bc34a", "#f3f0e4", "#f6d365"];
+  // Brand palette — lotus red, navy, a little gold (soft petals on cream)
+  const COLORS = ["#d81f27", "#16237a", "#e0a53a", "#e98a90", "#16237a"];
 
   const rand = (a, b) => a + Math.random() * (b - a);
 
@@ -40,7 +40,7 @@
         y: Math.random() * h,
         size: rand(1.2, 3.6),
         color,
-        baseAlpha: rand(0.25, 0.9),
+        baseAlpha: rand(0.1, 0.34),
         twSpeed: rand(0.4, 1.6),
         twPhase: rand(0, Math.PI * 2),
         vx: rand(-0.06, 0.06),
@@ -63,7 +63,7 @@
 
   function draw(alphaFor) {
     ctx.clearRect(0, 0, w, h);
-    ctx.globalCompositeOperation = "lighter"; // additive glow
+    // normal blending — additive would wash out on the light cream background
     for (const st of stars) {
       const a = alphaFor(st);
       if (a <= 0.01) continue;
@@ -73,7 +73,6 @@
       ctx.drawImage(spr, st.x - d / 2, st.y - d / 2, d, d);
     }
     ctx.globalAlpha = 1;
-    ctx.globalCompositeOperation = "source-over";
   }
 
   let t = 0;

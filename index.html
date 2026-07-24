@@ -47,9 +47,10 @@
   <main>
     <!-- ============================ HERO ============================ -->
     <section class="hero" id="home">
-      <div class="hero-bg" aria-hidden="true"></div>
+      <img class="hero-media" src="images/hero.jpg" alt="" aria-hidden="true" fetchpriority="high" />
+      <div class="hero-overlay" aria-hidden="true"></div>
       <div class="container hero-inner">
-        <p class="eyebrow">From Farm to Global Markets</p>
+        <p class="eyebrow eyebrow-light">From Farm to Global Markets</p>
         <h1 class="hero-title">
           Delivering&nbsp;Quality.<br />
           <span class="accent">Creating&nbsp;Value.</span><br />
@@ -62,7 +63,7 @@
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#divisions">Explore our divisions</a>
-          <a class="btn btn-ghost" href="tel:+919619827319">Call us</a>
+          <a class="btn btn-ghost btn-ghost-light" href="tel:+919619827319">Call us</a>
         </div>
       </div>
     </section>
@@ -93,11 +94,16 @@
           </p>
         </div>
 
-        <div class="stats">
-          <div class="stat"><span class="stat-num">5</span><span class="stat-label">Business divisions</span></div>
-          <div class="stat"><span class="stat-num">3</span><span class="stat-label">Processing plants</span></div>
-          <div class="stat"><span class="stat-num">4</span><span class="stat-label">Product categories</span></div>
-          <div class="stat"><span class="stat-num">4×</span><span class="stat-label">Global certifications</span></div>
+        <div class="media-split">
+          <div class="media-frame">
+            <img src="images/about.jpg" alt="A vibrant market display of fresh fruits and vegetables" loading="lazy" decoding="async" />
+          </div>
+          <div class="stats stats-2">
+            <div class="stat"><span class="stat-num">5</span><span class="stat-label">Business divisions</span></div>
+            <div class="stat"><span class="stat-num">3</span><span class="stat-label">Processing plants</span></div>
+            <div class="stat"><span class="stat-num">4</span><span class="stat-label">Product categories</span></div>
+            <div class="stat"><span class="stat-num">4×</span><span class="stat-label">Global certifications</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -164,24 +170,32 @@
 
         <div class="grid grid-4">
           <article class="card product">
-            <span class="prod-badge badge-green">🥬</span>
-            <h3>Fresh Produce</h3>
-            <p>Vegetables, herbs and fruits.</p>
+            <div class="product-media"><img src="images/fresh.jpg" alt="Fresh vegetables and greens" loading="lazy" decoding="async" /><span class="prod-tag tag-green">Fresh</span></div>
+            <div class="product-body">
+              <h3>Fresh Produce</h3>
+              <p>Vegetables, herbs and fruits.</p>
+            </div>
           </article>
           <article class="card product">
-            <span class="prod-badge badge-red">🥫</span>
-            <h3>Canned Products</h3>
-            <p>Fruits, vegetables, pulses, sauces &amp; more.</p>
+            <div class="product-media"><img src="images/canned.jpg" alt="Jars and packaged food with fresh produce" loading="lazy" decoding="async" /><span class="prod-tag tag-red">Canned</span></div>
+            <div class="product-body">
+              <h3>Canned Products</h3>
+              <p>Fruits, vegetables, pulses, sauces &amp; more.</p>
+            </div>
           </article>
           <article class="card product">
-            <span class="prod-badge badge-amber">🌿</span>
-            <h3>Dehydrated Products</h3>
-            <p>Vegetables, fruits, herbs, spices &amp; more.</p>
+            <div class="product-media"><img src="images/dehydrated.jpg" alt="Assorted dried spices and herbs" loading="lazy" decoding="async" /><span class="prod-tag tag-amber">Dehydrated</span></div>
+            <div class="product-body">
+              <h3>Dehydrated Products</h3>
+              <p>Vegetables, fruits, herbs, spices &amp; more.</p>
+            </div>
           </article>
           <article class="card product">
-            <span class="prod-badge badge-blue">❄️</span>
-            <h3>Frozen Products</h3>
-            <p>Vegetables, fruits, pulps &amp; purees, ready-to-eat, gravies (red &amp; green) and many more.</p>
+            <div class="product-media"><img src="images/frozen.jpg" alt="Fresh berries" loading="lazy" decoding="async" /><span class="prod-tag tag-blue">Frozen</span></div>
+            <div class="product-body">
+              <h3>Frozen Products</h3>
+              <p>Vegetables, fruits, pulps &amp; purees, ready-to-eat, gravies (red &amp; green) and many more.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -194,6 +208,10 @@
           <p class="kicker">Walson Nutrifoods · Farming &amp; Distribution</p>
           <h2>Fresh produce. Farm fresh. Future ready.</h2>
           <p class="section-lead">From our farms to your table — premium quality produce grown with care and supplied with trust, backed by a network of skilled farmers across multiple states.</p>
+        </div>
+
+        <div class="media-frame media-wide">
+          <img src="images/farming.jpg" alt="Young seedlings growing in nursery pots" loading="lazy" decoding="async" />
         </div>
 
         <h3 class="sub-head">Our fresh produce range</h3>
@@ -269,6 +287,10 @@
           <p class="section-lead">Delivering safe, wholesome and innovative food products through excellence, science and care.</p>
         </div>
 
+        <div class="media-frame media-wide">
+          <img src="images/manufacturing.jpg" alt="Food technologist in safety eyewear at a quality lab" loading="lazy" decoding="async" />
+        </div>
+
         <div class="grid grid-3">
           <article class="card feature">
             <div class="ico">🏭</div>
@@ -301,6 +323,18 @@
             <p>The standard we hold ourselves to in every product that carries the Walson name.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- ========================= GLOBAL BAND ========================= -->
+    <section class="band">
+      <img class="band-media" src="images/global.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+      <div class="band-overlay" aria-hidden="true"></div>
+      <div class="container band-inner">
+        <p class="kicker kicker-light">Walson Global · Export Oriented Unit</p>
+        <h2>From India to the world</h2>
+        <p>We deliver trusted Indian agri products to global markets — along with specialty foods and sustainable non-food items — through a strong export network built on quality and traceability.</p>
+        <a class="btn btn-primary" href="#contact">Partner with us</a>
       </div>
     </section>
 

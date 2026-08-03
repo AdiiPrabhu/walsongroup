@@ -178,7 +178,10 @@ a.card { display: block; color: inherit; }
 .card h4 { font-size: 1.08rem; margin-bottom: 0.45rem; color: var(--navy); }
 .card p { color: var(--muted); font-size: 0.96rem; }
 
-.card-accent { background: linear-gradient(160deg, var(--navy), var(--navy-deep)); border: 0; color: #fff; }
+/* .section-alt .card sets a white background at higher specificity, so the
+   accent variant has to match it to stay navy inside alt sections */
+.card-accent,
+.section-alt .card-accent { background: linear-gradient(160deg, var(--navy), var(--navy-deep)); border: 0; color: #fff; }
 .card-accent h3, .card-accent h4 { color: #fff; }
 .card-accent p { color: rgba(255, 255, 255, 0.78); }
 
@@ -192,6 +195,35 @@ a.card { display: block; color: inherit; }
 .card-link { display: inline-block; margin-top: 1rem; font-weight: 600; font-size: 0.92rem; color: var(--red); transition: gap 0.2s; }
 .card-accent .card-link { color: #ffd7d0; }
 .card-link:hover { opacity: 0.8; }
+
+/* lets a card fill the remainder of a 3-up row so the grid ends flush */
+.grid-3 .card-span-2 { grid-column: span 2; }
+
+/* ===================== LICENSING & COMPLIANCE ===================== */
+.compliance-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+.compliance-card {
+  display: flex; flex-direction: column; gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.25rem;
+  transition: transform 0.25s var(--ease), background 0.25s, border-color 0.25s;
+}
+.compliance-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+.compliance-mark {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem); font-weight: 600; color: #fff; line-height: 1.1;
+}
+.compliance-name { font-size: 0.76rem; line-height: 1.4; color: rgba(255, 255, 255, 0.62); }
+.compliance-note {
+  margin-top: 1.75rem; font-size: 0.92rem; color: rgba(255, 255, 255, 0.6);
+}
+.compliance-note a { color: #ffd7d0; font-weight: 600; }
+.compliance-note a:hover { opacity: 0.8; }
 
 /* product cards (with imagery) */
 .card.product { padding: 0; overflow: hidden; }
@@ -298,6 +330,7 @@ a.card { display: block; color: inherit; }
 @media (max-width: 900px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .compliance-grid { grid-template-columns: repeat(3, 1fr); }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; }
   .media-split { grid-template-columns: 1fr; }
@@ -320,6 +353,8 @@ a.card { display: block; color: inherit; }
 
 @media (max-width: 560px) {
   .grid-4, .grid-3, .stats { grid-template-columns: 1fr; }
+  .compliance-grid { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 .card-span-2 { grid-column: span 1; }
   .footer-inner { grid-template-columns: 1fr; gap: 1.75rem; }
   .footer-bar-inner { justify-content: center; text-align: center; }
   .trust-inner { justify-content: center; text-align: center; }

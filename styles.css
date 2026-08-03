@@ -199,6 +199,13 @@ a.card { display: block; color: inherit; }
 /* lets a card fill the remainder of a 3-up row so the grid ends flush */
 .grid-3 .card-span-2 { grid-column: span 2; }
 
+/* division copy varies a lot in length; pinning the link to the card floor
+   keeps the row reading as deliberate rather than ragged */
+.card.division { display: flex; flex-direction: column; }
+.card.division .card-link { margin-top: auto; padding-top: 1rem; }
+/* flex would stretch these to the card width; keep them hugging their text */
+.card.division .pill, .card.division .card-link { align-self: flex-start; }
+
 /* ===================== LICENSING & COMPLIANCE ===================== */
 .compliance-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
 .compliance-card {
